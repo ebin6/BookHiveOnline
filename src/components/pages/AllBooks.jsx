@@ -24,7 +24,7 @@ useEffect(()=>{
                 {
                     books.map((book)=>(
                         <BookCard key={book.id} book_name={book.title}
-                         price={book.price} author={book.author}/>
+                         price={book.price} author={book.author} id={book.id}/>
                     ))
                 }
             </section>
