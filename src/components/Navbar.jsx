@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { UserContext } from "./UserContext"
+import { ThemeContext } from "./ThemeContext"
+
+
 function Navbar(){
 
     const username=useContext(UserContext)
+
+    const{theme,setTheme}=useContext(ThemeContext)
 
     return(
         <nav>
@@ -17,6 +22,7 @@ function Navbar(){
             <div>
                 {username}
             </div>
+            <button onClick={()=>{setTheme(theme=="light"?"dark":"light")}}>{theme}</button>
         </nav>
     )
 }
